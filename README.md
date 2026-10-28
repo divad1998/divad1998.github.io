@@ -2,7 +2,9 @@
 
 A personal engineering portfolio with a dark editorial design, lime accents, an interactive backend-flow sketch, an animated Job Radar feature, expandable project notes, responsive navigation, and a live Nigeria clock.
 
-**Website:** https://job-radar.alwaysdata.net/portfolio/
+**Website:** https://divad1998.github.io/
+
+**Repository:** https://github.com/divad1998/divad1998.github.io
 
 **Featured project:** [Job Radar](https://job-radar.alwaysdata.net/)
 
@@ -36,11 +38,15 @@ The API/queue/cache sketch illustrates engineering concepts; it does not expose 
 
 There is a persistent pause/resume control for animation. The system reduced-motion preference is respected. Tabs support arrow, Home, and End keys; project notes use native `details`; every section remains readable without JavaScript. The only localStorage item is `david-portfolio-motion` (`paused` or `playing`). The contact button opens the visitor's email application; it does not submit personal information to a server.
 
-## Deploy on alwaysdata
+## Publish on GitHub Pages
 
-Deploy **the contents of `dist/` only** to `/home/job-radar/job-matcher/public/portfolio/`. This adds a static directory beneath the existing Job Radar document root, so the existing Job Radar application and its URL continue to work. Relative asset links support the `/portfolio/` path. This site requires no PHP process, database, scheduler, or npm build.
+GitHub Pages serves this portfolio independently of Job Radar. In this repository's **Settings → Pages**, select **GitHub Actions** as the source.
 
-Use SFTP/SSH with your existing alwaysdata access. Do not commit credentials, SSH keys, the Laravel `.env`, or the whole Laravel application here. Copy to a new staging directory first, verify the files, and rename into place. When updating an existing release, retain its previous directory as a backup. The deployment preparation script `scripts/package_release.py` writes a deterministic archive and manifest for the static files.
+The workflow in `.github/workflows/pages.yml` validates and publishes `dist/` on every push to `main`. It can also be started manually from the Actions tab. Only the static HTML, assets, and sitemap are published; source scripts and the optional Apache configuration are excluded. No deployment secrets, paid hosting, database, scheduler, or npm installation is required.
+
+To update the site, edit the files in `dist/` and push to `main`. Wait for the **Publish portfolio** workflow to complete. The portfolio's canonical URL, sharing image URL, structured data, and sitemap all use `https://divad1998.github.io/`.
+
+The previous alwaysdata installation is not used by this publishing workflow. Its one-time installer is retired; the original implementation remains in Git history at commit `41500f9`. Job Radar remains at its existing alwaysdata address.
 
 If the public URL changes, update the canonical URL, Open Graph URL/image, JSON-LD URL, and sitemap in `dist/`.
 
