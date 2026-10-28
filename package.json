@@ -1,0 +1,10 @@
+{
+  "name": "david-dinneya-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "David Dinneya — backend engineer. A lightweight, animated personal portfolio.",
+  "scripts": {
+    "check": "node --check dist/assets/site.js && python3 scripts/check_site.py",
+    "preview": "python3 -m http.server 8080 --directory dist"
+  }
+}
