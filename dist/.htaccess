@@ -1,11 +1,11 @@
 Options -Indexes
 DirectoryIndex index.html
-ErrorDocument 404 /portfolio/404.html
+ErrorDocument 404 /404.html
 <IfModule mod_headers.c>
 Header set X-Content-Type-Options "nosniff"
 Header set Referrer-Policy "strict-origin-when-cross-origin"
 Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
-Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-jqKzVcm7DummGW8bURA3Y5MxnVJJOn05z0NlsTYJSk0='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-kwTAn3B7LGkjFwdoPMY1DGAX6v36oiA1Mf45i9gGzZo='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
 <FilesMatch "\.html$">
 Header set Cache-Control "no-cache"
 </FilesMatch>
